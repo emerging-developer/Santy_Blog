@@ -87,6 +87,7 @@ class Comment(db.Model):
     post_id = db.Column(db.Integer, db.ForeignKey('blog_post.id'))
     post = relationship("BlogPost", back_populates="comments")
 
+    # creating a children relationship with the User
     commented_user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     commented_user = relationship("User", back_populates="comments")
 
